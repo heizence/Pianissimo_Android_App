@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.pianissimo.Activities.MainActivity;
 import com.example.pianissimo.R;
 import com.google.gson.Gson;
+import com.example.pianissimo.Modules.secretKeys;
 
 public class httpRequestAPIs {
     /*
@@ -48,12 +49,11 @@ public class httpRequestAPIs {
             httpRequestAPIs.SOME_API(...args, new Callee_success(), new Callee_failed());
         }
         */
-    public static String home_ipAddress = "172.16.11.213";  //  Wifi : AP-103-1002-5G
-    public static String other_ipAddress = "172.30.112.55";  // 집이 아닌 외부 공간 Ip 주소. Terminal 에서 ifconfig 명령어로 조회 후 en0 항목에서 ip 주소 찾기.
+
     public static String emulator_ipAddress = "10.0.2.2";   // 에뮬레이터 private ip 주소
 
     public static boolean isHome = true;   // 재택근무 여부
-    public static String ipAddressToUse = isHome ? home_ipAddress : other_ipAddress;
+    public static String ipAddressToUse = isHome ? secretKeys.HOME_IP_ADDRESS : secretKeys.OTHER_IP_ADDRESS;
     public static String MAIN_SERVER_URL = "http://" + ipAddressToUse + ":8000/";  // Main PHP server 주소
     public static Boolean isEmulator = checkIsEmulator.check();
 
