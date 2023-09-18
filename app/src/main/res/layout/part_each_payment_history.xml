@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eachPaymentHistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10sp"
+    android:background="@drawable/style_each_data_block"
+    android:padding="15sp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/eachPaymentHistoryStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이용중"
+            android:textColor="@color/green_001"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/eachPaymentHistoryTicketType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n개월 레슨 이용권"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/style_each_data_block"
+        android:gravity="right"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingHorizontal="15sp">
+
+        <TextView
+            android:id="@+id/eachPaymentHistoryTicketStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:text="결제일 : 20xx.xx.xx"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/eachPaymentHistoryTicketEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="만료일 : 20xx.xx.xx"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

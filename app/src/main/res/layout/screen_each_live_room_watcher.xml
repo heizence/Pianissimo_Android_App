@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/screen_each_live_room_watcher_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="32sp">
+
+    <!-- title -->
+    <TextView
+        android:id="@+id/screen_each_live_room_watcher_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16sp"
+        android:layout_marginBottom="20sp"
+        android:text="라이브 방송"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- 스트리머가 송출하는 영상 표시 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screen_each_live_room_watcher_surfaceViewWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="210sp"
+        android:layout_below="@+id/screen_each_live_room_watcher_title"
+        android:layout_alignParentStart="true"
+        android:background="@color/blue_001"
+        android:layout_marginTop="10sp"
+        android:paddingBottom="0sp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/screen_each_live_room_watcher_surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/screen_each_live_room_watcher_fullscreen_btn"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginEnd="7sp"
+            android:layout_marginBottom="7sp"
+            android:src="@drawable/ic_fullscreen_btn_01"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--********** 방송 관련 정보 **********-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screen_each_live_room_watcher_infoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/screen_each_live_room_watcher_surfaceViewWrapper"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/style_box_border_line"
+        android:paddingHorizontal="16sp"
+        android:paddingVertical="16sp">
+
+        <!-- 방송 주최자 프로필 사진 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/screen_each_live_room_watcher_HostProfileImgView"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="70sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/screen_each_live_room_watcher_HostProfileImg"
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_profile_photo" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- 방송 제목 -->
+        <TextView
+            android:id="@+id/screen_each_live_room_watcher_eachBroadCastTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="방송 title"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/screen_each_live_room_watcher_HostName"
+            app:layout_constraintStart_toStartOf="@+id/screen_each_live_room_watcher_HostName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+        <!-- 방송 주최자 이름 -->
+        <TextView
+            android:id="@+id/screen_each_live_room_watcher_HostName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원 이름"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/screen_each_live_room_watcher_numberOfWatchersOrDate"
+            app:layout_constraintStart_toStartOf="@+id/screen_each_live_room_watcher_numberOfWatchersOrDate"
+            app:layout_constraintTop_toBottomOf="@+id/screen_each_live_room_watcher_eachBroadCastTitle"
+            app:layout_constraintVertical_bias="0.181" />
+        <!-- 방송 시청자 수(다시보기의 경우 방송 당일 진행 날짜 표시)-->
+        <TextView
+            android:id="@+id/screen_each_live_room_watcher_numberOfWatchersOrDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:text="n명 시청중"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/screen_each_live_room_watcher_HostProfileImgView"
+            app:layout_constraintTop_toBottomOf="@+id/screen_each_live_room_watcher_HostName" />
+        <!-- 방송 시작 후 경과 시간 -->
+        <TextView
+            android:id="@+id/screen_each_live_room_watcher_timeLapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:text="시작 : n분 전"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/screen_each_live_room_watcher_numberOfWatchersOrDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/screen_each_live_room_watcher_numberOfWatchersOrDate"
+            app:layout_constraintTop_toTopOf="@+id/screen_each_live_room_watcher_numberOfWatchersOrDate"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--********** 실시간 채팅 영역 **********-->
+    작
+    <!-- title -->
+    <TextView
+        android:id="@+id/screen_each_live_room_watcher_chatTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/screen_each_live_room_watcher_infoLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10dp"
+        android:text="실시간 채팅"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatMessageRecyclerView_watcher"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_above="@+id/chatInputLayout"
+        android:layout_below="@+id/screen_each_live_room_watcher_chatTitleTextView"
+        android:layout_marginTop="5sp"
+        android:paddingHorizontal="16sp" />
+
+    <!-- 채팅 입력창 및 전송 버튼 -->
+    <RelativeLayout
+        android:id="@+id/chatInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15sp">
+
+            <EditText
+                android:id="@+id/screen_each_live_room_watcher_chatInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="전송할 채팅 내용"
+                android:imeOptions="actionDone"
+                android:maxLines="2"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/screen_each_live_room_watcher_sendChatBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="sendChatMessage"
+                android:src="@drawable/ic_send_btn_01" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

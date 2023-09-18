@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eachMyLessonHistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10sp"
+    android:background="@drawable/style_each_data_block"
+    android:padding="15sp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_each_data_block"
+        android:orientation="vertical"
+        android:paddingRight="15sp">
+
+        <!-- 강사명 -->
+        <TextView
+            android:id="@+id/eachMyLessonHistoryInstructorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20sp"
+            android:text="강사명"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <!-- 레슨 날짜 -->
+        <TextView
+            android:id="@+id/eachMyLessonHistoryLessonDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20xx.xx.xx"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+        <!-- 레슨 시간 -->
+        <TextView
+            android:id="@+id/eachMyLessonHistoryTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:00 ~ 13:00"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!--********** 평점 영역 **********-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_each_data_block"
+        android:layout_marginEnd="20sp"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:paddingHorizontal="15sp">
+        <ImageView
+            android:id="@+id/eachMyLessonHistoryStar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+        <ImageView
+            android:id="@+id/eachMyLessonHistoryStar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+        <ImageView
+            android:id="@+id/eachMyLessonHistoryStar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+        <ImageView
+            android:id="@+id/eachMyLessonHistoryStar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+        <ImageView
+            android:id="@+id/eachMyLessonHistoryStar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+    </LinearLayout>
+
+    <!-- 평가하기 버튼 -->
+    <Button
+        android:id="@+id/eachMyLessonHistoryRateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="평가"
+        android:paddingVertical="10sp"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/blue_001"/>
+</LinearLayout>

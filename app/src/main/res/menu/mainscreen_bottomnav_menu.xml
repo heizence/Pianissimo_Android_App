@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_fragment_main"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="홈"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_fragment_lesson"
+        android:enabled="true"
+        android:icon="@drawable/ic_lesson"
+        android:title="레슨"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_fragment_practice_room"
+        android:enabled="true"
+        android:icon="@drawable/ic_practice_room"
+        android:title="연습실"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_fragment_broadcast"
+        android:enabled="true"
+        android:icon="@drawable/ic_broadcast"
+        android:title="방송"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_fragment_mypage"
+        android:enabled="true"
+        android:icon="@drawable/ic_mypage"
+        android:title="MY"
+        android:visible="true" />
+</menu>

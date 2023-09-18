@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentBookLesson"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16sp"
+    android:paddingTop="32sp"
+    android:orientation="vertical"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--********** 각 메뉴 항목 **********-->
+        <TextView
+            android:id="@+id/fragmentBookLessonTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="레슨 예약"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--********** 남은 레슨권 수 **********-->
+        <TextView
+            android:id="@+id/fragmentBookLessonLessonsLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남은 레슨권 수 : "
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/fragmentBookLessonLessonsLeftNum"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragmentBookLessonLessonsLeftNum" />
+
+        <TextView
+            android:id="@+id/fragmentBookLessonLessonsLeftNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:text="10"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fragmentBookLessonLessonsLeft"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentBookLessonTitle" />
+
+        <!--********** 레슨 데이터 불러오기 버튼, 날짜 범위 **********-->
+
+        <!-- 이전 버튼 -->
+        <LinearLayout
+            android:id="@+id/fragmentBookLessonGetPreviousWeekDataBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingRight="20sp"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@+id/fragmentBookLessonDateRange"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentBookLessonLessonsLeft">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_left_01"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/getPreviousWeekDataBtnTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이전"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="169dp" />
+        </LinearLayout>
+
+        <!-- 조회 날짜 범위 -->
+        <TextView
+            android:id="@+id/fragmentBookLessonDateRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20xx.x.x ~ 20xx.x.x"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentBookLessonGetPreviousWeekDataBtn"
+            app:layout_constraintEnd_toStartOf="@+id/fragmentBookLessonGetNextWeekDataBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fragmentBookLessonGetPreviousWeekDataBtn" />
+
+        <!-- 다음 버튼 -->
+        <LinearLayout
+            android:id="@+id/fragmentBookLessonGetNextWeekDataBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20sp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentBookLessonDateRange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fragmentBookLessonDateRange">
+
+            <TextView
+                android:id="@+id/fragmentBookLessonGetNextWeekDataBtnTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="268dp"
+                tools:layout_editor_absoluteY="185dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right_01" />
+        </LinearLayout>
+
+        <!--********** 강사 선택 버튼 영역 **********-->
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/fragmentBookLessonInstructorBtns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:alignContent="stretch"
+            app:alignItems="stretch"
+            app:flexWrap="wrap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentBookLessonGetPreviousWeekDataBtn">
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_check_01"-->
+<!--        />-->
+
+    <!--********** 레슨 현황 테이블 **********-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+
+
+        <GridLayout
+            android:id="@+id/fragmentBookLessonLessonStatusTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="8"
+            android:rowCount="12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentBookLessonInstructorBtns" />
+
+    </ScrollView>
+</LinearLayout>

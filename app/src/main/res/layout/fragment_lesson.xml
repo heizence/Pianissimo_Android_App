@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragmentLesson"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingLeft="16sp"
+    android:paddingTop="32sp"
+    android:paddingRight="16sp">
+
+    <!--********** 각 메뉴 항목 **********-->
+    <TextView
+        android:id="@+id/fragmentLessonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="레슨"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 레슨 예약 -->
+    <LinearLayout
+        android:id="@+id/registerLessonMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_lesson_each_menu"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingVertical="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/myLessonStatusMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentLessonTitle"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="레슨 예약"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <!-- 내 레슨 예약 현황 -->
+    <LinearLayout
+        android:id="@+id/myLessonStatusMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/style_lesson_each_menu"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingVertical="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/myLessonHistoryMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerLessonMenu">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 레슨 예약 현황"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <!-- 받은 레슨 내역 -->
+    <LinearLayout
+        android:id="@+id/myLessonHistoryMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/style_lesson_each_menu"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingVertical="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myLessonStatusMenu">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="받은 레슨 내역"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

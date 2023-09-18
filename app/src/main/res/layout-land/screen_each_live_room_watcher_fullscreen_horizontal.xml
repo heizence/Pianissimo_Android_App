@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_FrameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--********** 스트리머 영상 표시 **********-->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--********** 내용 표시되는 영역 **********-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_contents_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_transparent">
+
+        <!-- 방송 종료 버튼 -->
+        <ImageView
+            android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_exitFullScreenBtn"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:layout_marginTop="16sp"
+            android:layout_marginEnd="16sp"
+            android:src="@drawable/ic_fullscreen_exit_btn_01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 실시간 채팅 영역 -->
+        <LinearLayout
+            android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_chatRootLayout"
+            android:layout_width="300sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_chatTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:text="실시간 채팅"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- 채팅이 표시되는 영역 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chatMessageRecyclerView_watcher_fullscreen_horizontal_land"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- 채팅 입력창 및 전송 버튼 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_chatInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="전송할 채팅 내용"
+                    android:imeOptions="actionDone"
+                    android:maxLines="2"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/screen_each_live_room_watcher_fullscreen_horizontal_land_sendChatBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:onClick="sendChatMessage"
+                    android:src="@drawable/ic_send_btn_01" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

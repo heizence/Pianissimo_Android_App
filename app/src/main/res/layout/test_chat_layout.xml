@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/test_chat_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"
+        android:text="라이브 방송"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+
+    <LinearLayout
+        android:id="@+id/streamerVideoLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_above="@+id/constrainedLayout"
+        android:layout_below="@+id/title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:background="@color/blue_002"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrainedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_above="@+id/chatTitleTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/blue_001">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:text="information"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/chatTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scrollView"
+        android:layout_alignParentStart="true"
+        android:text="실시간 채팅"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        android:layout_above="@+id/buttonLayout"
+        android:background="@color/gray_001"
+        android:isScrollContainer="false">
+
+        <LinearLayout
+            android:id="@+id/messageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Your chat message views will be dynamically added here -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your message"
+            android:imeOptions="actionDone"
+            android:maxLines="2"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:text="Send" />
+    </RelativeLayout>
+
+</RelativeLayout>

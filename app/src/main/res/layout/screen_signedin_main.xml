@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/mainFragmentView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1">-->
+<!--    </androidx.fragment.app.FragmentContainerView>-->
+
+    <FrameLayout
+        android:id="@+id/mainFragmentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:itemIconTint="@drawable/style_bottomnav_icon"
+        app:itemTextColor="@drawable/style_bottomnav_icon"
+        app:menu="@menu/mainscreen_bottomnav_menu"
+        app:labelVisibilityMode="labeled"/>
+</LinearLayout>

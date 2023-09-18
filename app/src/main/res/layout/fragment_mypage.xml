@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentMyPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="32sp"
+    android:paddingLeft="32sp"
+    android:paddingRight="32sp">
+
+    <TextView
+        android:id="@+id/fragmentMyPageMainHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="마이페이지"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--********** 회원 정보 영역 **********-->
+
+    <!-- 프로필 사진 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fragmentMyPageProfileImgCardView"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_marginTop="30sp"
+        app:cardCornerRadius="100sp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageMainHeader">
+    <ImageView
+        android:id="@+id/fragmentMyPageProfileImg"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_profile_photo" />
+    </androidx.cardview.widget.CardView>
+    <!-- 회원 이름 -->
+    <TextView
+        android:id="@+id/fragmentMyPageUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="회원 이름"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageProfileImgCardView" />
+    <!-- 회원 아이디 -->
+    <TextView
+        android:id="@+id/fragmentMyPageAccountEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:text="test@test.com"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageUserName" />
+    <!-- 학원 이용 기간 -->
+    <TextView
+        android:id="@+id/fragmentMyPageUsageDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="이용 기간 : 20xx.x.x ~ 20xx.x.x "
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageAccountEmail" />
+
+    <!--********** 각 메뉴 선택 항목 **********-->
+
+    <!-- 비밀번호 변경 -->
+    <LinearLayout
+        android:id="@+id/fragmentMyPageEditPasswordBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/style_mypage_each_menu"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClickEditPassword"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageUsageDate">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="비밀번호 변경"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_01" />
+    </LinearLayout>
+
+    <!-- 결제내역 조회 -->
+    <LinearLayout
+        android:id="@+id/fragmentMyPageGePaymentHistoryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_mypage_each_menu"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageEditPasswordBtn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="결제내역 조회"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_01" />
+    </LinearLayout>
+
+    <!-- 라이브 방송 시작 -->
+    <LinearLayout
+        android:id="@+id/fragmentMyPageStartBroadCastBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_mypage_each_menu"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageGePaymentHistoryBtn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="라이브 방송 시작"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_01" />
+    </LinearLayout>
+
+    <!-- 로그아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_mypage_each_menu"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClickLogout"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMyPageStartBroadCastBtn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="로그아웃"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_01" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

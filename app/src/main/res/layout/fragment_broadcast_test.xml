@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_broadcast_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="16sp"
+    android:paddingRight="16sp">
+
+    <!-- 상단 해더 부분 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fragmentBroadcastTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="라이브 방송 목록"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/fragment_broadcast_liveStartBtn"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:src="@drawable/ic_camera_01" />
+    </LinearLayout>
+
+    <!-- 내용 영역 -->
+    <FrameLayout
+        android:id="@+id/fragment_broadcast_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+</LinearLayout>

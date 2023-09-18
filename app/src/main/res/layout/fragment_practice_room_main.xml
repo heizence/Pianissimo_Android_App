@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentPracticeRoomMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16sp"
+    android:paddingTop="32sp"
+    android:orientation="vertical"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--********** 각 메뉴 항목 **********-->
+        <TextView
+            android:id="@+id/fragmentPracticeRoomMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="연습실 예약"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--********** 레슨 데이터 불러오기 버튼, 날짜 범위 **********-->
+
+        <!-- 이전 버튼 -->
+        <LinearLayout
+            android:id="@+id/fragmentPracticeRoomMainGetPreviousWeekDataBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:clickable="true"
+            android:paddingRight="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/fragmentPracticeRoomMainDateRange"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentPracticeRoomMainTitle">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_left_01"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/getPreviousWeekDataBtnTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이전"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="169dp" />
+        </LinearLayout>
+
+        <!-- 조회 날짜 범위 -->
+        <TextView
+            android:id="@+id/fragmentPracticeRoomMainDateRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20xx.x.x ~ 20xx.x.x"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentPracticeRoomMainGetPreviousWeekDataBtn"
+            app:layout_constraintEnd_toStartOf="@+id/fragmentPracticeRoomMainGetNextWeekDataBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fragmentPracticeRoomMainGetPreviousWeekDataBtn" />
+
+        <!-- 다음 버튼 -->
+        <LinearLayout
+            android:id="@+id/fragmentPracticeRoomMainGetNextWeekDataBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20sp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentPracticeRoomMainDateRange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fragmentPracticeRoomMainDateRange">
+
+            <TextView
+                android:id="@+id/fragmentPracticeRoomMainGetNextWeekDataBtnTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다음"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="268dp"
+                tools:layout_editor_absoluteY="185dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right_01" />
+        </LinearLayout>
+
+        <!--********** 연습실 선택 버튼 영역 **********-->
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/fragmentPracticeRoomMainRoomBtns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:alignContent="stretch"
+            app:alignItems="stretch"
+            app:flexWrap="wrap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentPracticeRoomMainGetPreviousWeekDataBtn">
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:src="@drawable/ic_check_01"-->
+    <!--        />-->
+
+    <!--********** 연습실 예약 현황 테이블 **********-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+
+        <GridLayout
+            android:id="@+id/fragmentPracticeRoomMainLessonStatusTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="8"
+            android:rowCount="12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentPracticeRoomMainRoomBtns" />
+
+    </ScrollView>
+
+    <!-- 다음 버튼 -->
+    <LinearLayout
+        android:id="@+id/fragmentPracticeRoomMainMyRoomStatusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20sp"
+        android:layout_gravity="right"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/fragmentPracticeRoomMainMyRoomStatusBtnTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 연습실 예약 현황"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="268dp"
+            tools:layout_editor_absoluteY="185dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_01" />
+    </LinearLayout>
+</LinearLayout>

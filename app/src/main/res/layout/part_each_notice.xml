@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eachNotice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10sp"
+    android:background="@drawable/style_each_data_block"
+    android:orientation="vertical"
+    android:paddingHorizontal="12sp"
+    android:paddingVertical="15sp"
+    android:clickable="true"
+    >
+
+    <TextView
+        android:id="@+id/part_eachNoticeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공지사항 title"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/part_eachNoticeWrittenDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20xx.xx.xx"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+</LinearLayout>

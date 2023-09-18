@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300sp"
+    android:layout_height="wrap_content"
+    android:padding="40sp"
+    android:background="@drawable/style_dialog_confirm"
+    >
+
+    <TextView
+        android:id="@+id/dialogEditProfileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로필 사진 변경"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialogEditProfileSelectFromAlbumBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="앨범에서 사진 선택"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogEditProfileTitle" />
+
+    <TextView
+        android:id="@+id/dialogEditProfileSelectFromCameraBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="카메라로 사진 촬영"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogEditProfileSelectFromAlbumBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

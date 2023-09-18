@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350sp"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20sp"
+    android:paddingRight="20sp"
+    android:paddingTop="30sp"
+    android:paddingBottom="30sp"
+    android:background="@drawable/style_dialog_confirm">
+
+    <TextView
+        android:id="@+id/dialogConfirmContents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="텍스트 내용"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialogConfirmOkBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:clickable="true"
+        android:onClick="confirm"
+        android:text="확인"
+        android:textColor="@color/blue_001"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogConfirmContents" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

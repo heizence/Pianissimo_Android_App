@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/test_capture_FrameLayout"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/test_capture_cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="500sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/test_capture_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_transparent"
+        android:paddingLeft="16sp"
+        android:paddingRight="16sp">
+
+        <ImageView
+            android:id="@+id/test_capture_goBackBtn"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:onClick="onClickGoBack_"
+            android:src="@drawable/ic_arrow_left_02"
+            app:layout_constraintEnd_toStartOf="@+id/test_capture_switchCameraBtn"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/test_capture_switchCameraBtn" />
+
+        <ImageView
+            android:id="@+id/test_capture_switchCameraBtn"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:layout_marginTop="32sp"
+            android:onClick="switchCamera"
+            android:src="@drawable/ic_camera_02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/test_capture_goBackBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/reissuePasswordBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="20dp"
+            android:onClick="captureImage"
+            android:text="화면 캡처"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250sp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/style_dialog_confirm"
+    android:paddingLeft="20sp"
+    android:paddingTop="30sp"
+    android:paddingRight="20sp"
+    android:paddingBottom="30sp">
+
+    <TextView
+        android:id="@+id/dialogLessonRateContents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="레슨 평가하기"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--********** 평점 별 아이콘 **********-->
+    <!--********** 평점 영역 **********-->
+
+    <!--********** 취소, 확인 버튼 **********-->
+
+    <LinearLayout
+        android:id="@+id/dialogLessonRateStars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:paddingHorizontal="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogLessonRateContents">
+
+        <ImageView
+            android:id="@+id/dialogLessonRateStar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+
+        <ImageView
+            android:id="@+id/dialogLessonRateStar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+
+        <ImageView
+            android:id="@+id/dialogLessonRateStar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+
+        <ImageView
+            android:id="@+id/dialogLessonRateStar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+
+        <ImageView
+            android:id="@+id/dialogLessonRateStar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_unrated" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialogLessonRateConfirmBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:clickable="true"
+        android:onClick="confirm"
+        android:text="확인"
+        android:textColor="@color/blue_001"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogLessonRateCancelBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dialogLessonRateCancelBtn"
+        app:layout_constraintTop_toTopOf="@+id/dialogLessonRateCancelBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/dialogLessonRateCancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:onClick="confirm"
+        android:text="취소"
+        android:textColor="@color/gray_002"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/dialogLessonRateConfirmBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogLessonRateStars" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

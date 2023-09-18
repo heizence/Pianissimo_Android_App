@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/part_each_live_chat_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10sp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <!-- 채팅 전송자 프로필 사진 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/part_each_live_chat_message_senderProfileImgView"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="40sp">
+        <ImageView
+            android:id="@+id/part_each_live_chat_message_senderProfileImg"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_profile_photo" />
+    </androidx.cardview.widget.CardView>
+    <!-- 채팅 전송자 이름 -->
+    <TextView
+        android:id="@+id/part_each_live_chat_message_senderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:text="회원 이름"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/eachBroadCastViewerOrDate"
+        app:layout_constraintStart_toEndOf="@+id/eachBroadCastHostProfileImg" />
+
+    <!-- 채팅 내용 -->
+    <TextView
+        android:id="@+id/part_each_live_chat_message_chatContents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="채팅 내용"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eachBroadCastHostProfileImg" />
+</LinearLayout>

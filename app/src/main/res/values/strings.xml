@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Pianissimo</string>
+
+    <!--********** sharedPreference store key strings **********-->
+    <string name="sharedPreferenceMain">sharedPreferenceMain</string>
+    <string name="store_app_token">store_app_token</string>
+    <string name="store_AU_Id">store_AU_Id</string>
+    <string name="store_AU_Email">store_AU_Email</string>
+    <string name="store_AU_Name">store_AU_Name</string>
+    <string name="store_AU_PhoneNumber">store_AU_PhoneNumber</string>
+    <string name="store_AU_ProfileImg">store_AU_ProfileImg</string>
+    <string name="store_AU_Status">store_AU_Status</string>
+    <string name="store_AU_TicketType">store_AU_TicketType</string>
+    <string name="store_AU_TicketStartDate">store_AU_TicketStartDate</string>
+    <string name="store_AU_TicketExpiracyDate">store_AU_TicketExpiracyDate</string>
+    <string name="store_AU_LessonsLeft">store_AU_LessonsLeft</string>
+    <string name="store_AU_RegisteredDate">store_AU_RegisteredDate</string>
+
+    <string name="store_is_camera_permission_asked">store_is_camera_permission_asked</string>
+
+    <!--********** no data key strings **********-->
+    <string name="noDataTitle">noDataTitle</string>
+    <string name="noDataText">noDataText</string>
+
+    <!--********** notice data key strings **********-->
+    <string name="noticeId">noticeId</string>
+    <string name="noticeTitle">noticeTitle</string>
+    <string name="noticeContents">noticeContents</string>
+    <string name="noticeWrittenDate">noticeWrittenDate</string>
+    <string name="settings_name" translatable="false">AppRTC Settings</string>
+
+    <!--********** Broadcast function key strings **********-->
+    <string name="userName">userName</string>
+    <string name="roomName">roomName</string>
+    <string name="liveTitle">liveTitle</string>
+    <string name="liveStartedAt">liveStartedAt</string>
+    <string name="thumbnailImage">thumbnailImage</string>
+    <string name="isUsingFrontCamera">isUsingFrontCamera</string>
+    <string name="roomId">roomId</string>
+    <string name="isStreamer">isStreamer</string>
+    <string name="hostName">hostName</string>
+    <string name="hostProfileImg">hostProfileImg</string>
+    <string name="streamerSocketId">streamerSocketId</string>
+    <string name="watcherName">watcherName</string>
+    <string name="watcherSocketId">watcherSocketId</string>
+    <string name="numberOfWatchers">numberOfWatchers</string>
+    <string name="peerConnectionID">peerConnectionID</string>
+    <string name="chatMessage">chatMessage</string>
+    <string name="senderUserId">senderUserId</string>
+    <string name="senderName">senderName</string>
+    <string name="senderProfileImg">senderProfileImg</string>
+    <string name="chatMessageContents">chatMessageContents</string>
+    <string name="sdp">sdp</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="id">id</string>
+    <string name="label">label</string>
+    <string name="type">type</string>
+    <string name="data">data</string>
+    <string name="candidate">candidate</string>
+    <string name="videoRatio">videoRatio</string>
+
+    <!--********** Socket event names **********-->
+    <string name="connect">connect</string>
+    <string name="disconnect">disconnect</string>
+    <string name="ready">ready</string>
+    <string name="streamer_start_live">streamer start live</string>
+    <string name="create_new_room">create new room</string>
+    <string name="watcher_join">watcher join</string>
+    <string name="chat_message">chat message</string>
+    <string name="offer">offer</string>
+    <string name="answer">answer</string>
+    <string name="iceCandidate">iceCandidate</string>
+    <string name="watcher_left">watcher left</string>
+    <string name="end_live">end live</string>
+</resources>

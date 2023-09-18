@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/eachBroadCastLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20sp"
+    android:orientation="vertical">
+
+    <!-- 방송 섬네일 이미지 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+        <ImageView
+            android:id="@+id/eachBroadCastThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:src="@drawable/style_lesson_each_menu"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 실시간 방송일 경우에만 표시 -->
+        <TextView
+            android:id="@+id/eachBroadCastIsLiveTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@color/red_001"
+            android:paddingHorizontal="10sp"
+            android:paddingVertical="5sp"
+            android:text="실시간"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/eachBroadCastThumbnail"
+            app:layout_constraintEnd_toEndOf="@+id/eachBroadCastThumbnail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--********** 방송 관련 정보 **********-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20sp">
+
+        <!-- 방송 주최자 프로필 사진 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/eachBroadCastHostProfileImgView"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="100sp"
+            app:cardBackgroundColor="@color/white">
+        <ImageView
+            android:id="@+id/eachBroadCastHostProfileImg"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_profile_photo" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- 방송 제목 -->
+        <TextView
+            android:id="@+id/eachBroadCastRoomName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:text="방송 title"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/eachBroadCastHostProfileImgView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 방송 주최자 이름 -->
+        <TextView
+            android:id="@+id/eachBroadCastHostName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44sp"
+            android:layout_marginBottom="5sp"
+            android:text="회원 이름"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/eachBroadCastViewerOrDate"
+            app:layout_constraintStart_toEndOf="@+id/eachBroadCastHostProfileImgView" />
+
+        <!-- 방송 시청자 수 -->
+        <TextView
+            android:id="@+id/eachBroadCastViewerOrDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:text="n명 시청중"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/eachBroadCastHostProfileImgView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/screen_start_livestream_FrameLayout"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/screen_start_livestream_cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screen_start_livestream_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_transparent"
+        android:paddingLeft="16sp"
+        android:paddingRight="16sp">
+
+        <ImageView
+            android:id="@+id/screen_start_livestream_goBackBtn"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:onClick="onClickGoBack_"
+            android:src="@drawable/ic_arrow_left_02"
+            app:layout_constraintEnd_toStartOf="@+id/screen_start_livestream_switchCameraBtn"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/screen_start_livestream_switchCameraBtn" />
+
+        <ImageView
+            android:id="@+id/screen_start_livestream_switchCameraBtn"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:layout_marginTop="32sp"
+            android:onClick="switchCamera"
+            android:src="@drawable/ic_camera_02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/screen_start_livestream_goBackBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/screen_start_livestream_inputLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="방송 타이틀"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/screen_start_livestream_inputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/screen_start_livestream_goBackBtn"
+            app:layout_constraintVertical_bias="0.41000003"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/screen_start_livestream_inputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="10dp"
+            android:hint="방송 타이틀 입력"
+            app:layout_constraintBottom_toTopOf="@+id/reissuePasswordBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/screen_start_livestream_inputLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/screen_start_livestream_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/reissuePasswordBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickStartLive"
+            android:text="방송 시작"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/screen_start_livestream_inputLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/test_each_room"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="20sp">
+
+    <TextView
+        android:id="@+id/liveRoomName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:text="방송방 이름 : "
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        android:orientation="horizontal"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <org.webrtc.SurfaceViewRenderer
+                android:id="@+id/localSurfaceView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="스트리머 영상"
+                android:layout_gravity="top|end"
+                android:textColor="#000"
+                android:layout_margin="16dp"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="채팅 내용"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="" />
+
+    <ScrollView
+        android:id="@+id/chatScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/chatContentsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:background="@color/white">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/chatInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:hint="채팅 입력"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputLabel">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/chatInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:textSize="20sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/sendChatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendChatMessage"
+            android:text="전송" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350sp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/style_dialog_confirm"
+    android:paddingLeft="20sp"
+    android:paddingTop="30sp"
+    android:paddingRight="20sp"
+    android:paddingBottom="30sp">
+
+    <TextView
+        android:id="@+id/dialogConfirmOrCancel_Contents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="텍스트 내용"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialogConfirmOrCancel_CancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:clickable="true"
+        android:onClick="confirm"
+        android:text="취소"
+        android:textColor="@color/gray_002"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/dialogConfirmOrCancel_ConfirmBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogConfirmOrCancel_Contents" />
+
+    <TextView
+        android:id="@+id/dialogConfirmOrCancel_ConfirmBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="confirm"
+        android:text="확인"
+        android:textColor="@color/blue_001"
+        android:textSize="20sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/dialogConfirmOrCancel_CancelBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dialogConfirmOrCancel_CancelBtn"
+        app:layout_constraintTop_toTopOf="@+id/dialogConfirmOrCancel_CancelBtn"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/test_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="20sp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사용자 이름 입력"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/userNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginBottom="20sp"
+        android:hint="사용자 이름 입력"/>
+
+    <Button
+        android:id="@+id/startLiveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:text="방송 시작"
+        android:textSize="30sp"
+        android:onClick="startLive"/>
+
+    <Button
+        android:id="@+id/joinRoomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="방송 참여"
+        android:textSize="30sp"
+        android:onClick="joinLive"/>
+</LinearLayout>

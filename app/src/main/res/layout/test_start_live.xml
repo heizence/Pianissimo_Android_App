@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/test_start_live"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="20sp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="방송 시작"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/roomNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginBottom="20sp"
+        android:hint="방송방 이름 입력"/>
+
+    <Button
+        android:id="@+id/createRoomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="방송 시작"
+        android:textSize="30sp"
+        android:onClick="createRoomAndStartLive"/>
+</LinearLayout>
